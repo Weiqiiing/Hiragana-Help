@@ -45,6 +45,7 @@ if program == "1":
 
 
 if program == "2":
+            
     while True:
         japanese = ""
         english = ""
@@ -56,6 +57,7 @@ if program == "2":
         q = input("Please input the translation: ")
         q = q.replace(" ","")
         q = q.replace("-","")
+            
         if q == english:
             print("correct!")
         else:
