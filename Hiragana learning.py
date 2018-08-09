@@ -8,8 +8,8 @@ jap = [ "あ","い","う","え","お",                #∅
             "は","ひ","ふ","へ","ほ",                #H
             "ま","み","む","め","も"                 #M
             "や","ゆ","よ"                                 #Y
-#            "ら","り","る","れ","ろ"                 #R
-#            "わ","ゐ","ゑ","を"                         #W
+            "ら","り","る","れ","ろ"                 #R
+            "わ","ゐ","ゑ","を"                         #W
                                                        ]
 
 eng = [ "a","i","u","e","o",
@@ -24,7 +24,7 @@ eng = [ "a","i","u","e","o",
              "wa","wi","we","wo"
                                                     ]
 
-program = input("Choose Program\n\n1. Write the Hiragana (Needs IME)\n2. Decipher the Sentence\n> ")
+program = input("Choose Program\n\n1. Write the Hiragana (Needs IME)\n2. Decipher the 5 Monographs\n> ")
 
 if program == "1":
     
