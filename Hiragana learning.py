@@ -1,5 +1,5 @@
 import random
-length = 5
+length = 5 #Change this for second 'program' length
 jap = [ "あ","い","う","え","お",                #∅
             "か","き","く","け","こ",                #K
             "さ","し","す","せ","そ",                #S
@@ -11,7 +11,12 @@ jap = [ "あ","い","う","え","お",                #∅
             "ら","り","る","れ","ろ"                 #R
             "わ","ゐ","ゑ","を"                         #W
                                                        ]
+#When choosing what hiragana you want to use, just add a # to the beginning of each line you want to disable.
+#For example, to disable the M,Y and R Monographs, you would change the start of the lines to 
 
+#            "や","ゆ","よ"                                 #Y
+#            "ら","り","る","れ","ろ"                 #R
+#            "わ","ゐ","ゑ","を"                         #W
 eng = [ "a","i","u","e","o",
              "ka","ki","ku","ke","ko",
              "sa","shi","su","se","so",
@@ -24,13 +29,13 @@ eng = [ "a","i","u","e","o",
              "wa","wi","we","wo"
                                                     ]
 
-program = input("Choose Program\n\n1. Write the Hiragana (Needs IME)\n2. Decipher the 5 Monographs\n> ")
+program = input("Choose Program\n\n1. Write the Hiragana (Needs IME)\n2. Decipher the Monographs (Set length at start of file)\n> ")
 
 if program == "1":
     
     while True:
         guess = jap[random.randint(0,len(jap)-1)]
-        q = input("write the hiragana for ["+ str( guess ) +"] : ")
+        q = input("Write the Hiragana for ["+ str( guess ) +"] : ")
 
         if q != guess:
             x = 0
@@ -48,7 +53,7 @@ if program == "2":
             japanese += jap[word]
             english += eng[word]
         print("\n\n\n",japanese)
-        q = input("Please Input the translation")
+        q = input("Please input the translation: ")
         q = q.replace(" ","")
         q = q.replace("-","")
         if q == english:
