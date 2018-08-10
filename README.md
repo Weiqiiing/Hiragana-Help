@@ -7,3 +7,8 @@
       
       
       > I tried to make a function to check what is 'enabled'. The attempt failed, I may return in the future to do it in a different way
+
+  - V3
+  
+      + Show what is enabled / disabled. 
+      >This is pretty primitive, if you want this to properly work make sure just to comment (#) on the start of the line when disabling          something.
