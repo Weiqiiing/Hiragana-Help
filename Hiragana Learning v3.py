@@ -51,7 +51,7 @@ eng = [
              #Diacritics
              "ga","gi","gu","ge","go",
              "za","ji","zu","ze","zo",
-             "da","ji","zu","de","do", 
+             "da","dzi","dzu","de","do", #dzi and dzu, or di, and du - im not sure which are better to use rn. using dzi/dzu based on flashcards
              "ba","bi","bu","be","bo",
              "pa","pi","pu","pe","po"
                                                         ]
