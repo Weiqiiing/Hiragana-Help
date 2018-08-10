@@ -16,7 +16,7 @@
       
   - V4
   
-      + Added Diagraphs. Enable/Disable the same way.
+      + Added Digraphs. Enable/Disable the same way.
       
     - V4.1
           
@@ -26,3 +26,6 @@
   - V5
   
       + Rewrote a bunch of the code. Now easier to 'enable and disable' certain things
+      + Also added Digraphs and Diacritics
+      
+           + also learned that it wasnt Diagraph it is Digraph
