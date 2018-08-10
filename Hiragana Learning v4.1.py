@@ -126,14 +126,14 @@ if program == "3":
                                 "わ,ゐ,ゑ,を",
                                 #Diacritics
                                 "が,ぎ,ぐ,げ,ご","ざ,じ,ず,ぜ,ぞ","だ,ぢ,づ,で,ど",
-                                "ば,び,ぶ,べ,ぼ","ぱ,ぴ,ぷ,ぺ,ぽ"
+                                "ば,び,ぶ,べ,ぼ","ぱ,ぴ,ぷ,ぺ,ぽ",
                                 #Diagraphs
                                 "きょ,きゅ,きょ","しゃ,しゅ,しょ","ちゃ,ちゅ,ちょ",
                                 "にゃ,にゅ,にょ","ひゃ,ひゅ,ひょ","みゃ,みゅ,みょ",
                                 "りゃ,りゅ,りょ"
 
                    ]
-    for i in range(len(checkthese)-1):
+    for i in range(len(checkthese)):
         checkEnabled(letters[i],checkthese[i],monographs[i])
         if letters[i]=="W":
             print("\nDiacritics")
