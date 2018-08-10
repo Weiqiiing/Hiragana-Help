@@ -27,6 +27,17 @@ jap = [
             "だ","ぢ","づ","で","ど",                #D
             "ば","び","ぶ","べ","ぼ",                #B
             "ぱ","ぴ","ぷ","ぺ","ぽ"                 #P
+            #Diagraphs
+            "きょ","きゅ","きょ", 	                  #K
+            "しゃ","しゅ","しょ", 	                  #S
+            "ちゃ","ちゅ","ちょ", 	                  #C
+            "にゃ","にゅ","にょ", 	                  #N
+            "ひゃ","ひゅ","ひょ", 	                  #H
+            "みゃ","みゅ","みょ", 	                  #M
+            "りゃ","りゅ","りょ" 	                  #R
+            
+
+
                                                        ]
 #When choosing what hiragana you want to use, just add a # to the beginning of each line you want to disable.
 #For example, to disable the M,Y and R Monographs, you would change the start of the lines to 
@@ -34,6 +45,10 @@ jap = [
 #            "や","ゆ","よ"                                 #Y
 #            "ら","り","る","れ","ろ"                 #R
 #            "わ","ゐ","ゑ","を"                         #W
+
+#MAKE SURE TO ALSO DO THIS TO THE ENGLISH VERSION, ELSE IT WILL BE MIXED.
+#I should have used a nested list to link each of them, but at the time of making this I didn't.
+#Will update that in the future.
 
 
 eng = [
@@ -48,12 +63,23 @@ eng = [
              "ya","yu","yo",
              "ra","ri","ru","re","ro",
              "wa","wi","we","wo",
-             #Diacritics
+             #Diacritics (Dakuten)
              "ga","gi","gu","ge","go",
              "za","ji","zu","ze","zo",
              "da","dzi","dzu","de","do", #dzi and dzu, or di, and du - im not sure which are better to use rn. using dzi/dzu based on flashcards
              "ba","bi","bu","be","bo",
              "pa","pi","pu","pe","po"
+             #Diagraphs
+             "kya","kyu","kyo",
+             "sha","shu","sho",
+             "cha","chu","cho",
+             "nya","nyu","nyo",
+             "hya","hyu","hyo",
+             "mya","myu","myo",
+             "rya","ryu","ryo"
+
+
+             
                                                         ]
 program = input("""Choose Program\n\n
                             1. Write the Hiragana (Needs IME)\n
@@ -81,7 +107,7 @@ if program == "2":
             word = random.randint(0,len(jap)-1)
             japanese += jap[word]
             english += eng[word]
-        print("\n\n\n",japanese)
+        print("",japanese)
         q = input("Please input the translation: ")
         q = q.replace(" ","")
         q = q.replace("-","")
@@ -90,21 +116,28 @@ if program == "2":
             print("correct!")
         else:
             print(english)
-
+        print("\n\n")
 if program == "3":
-    checkthese = ["あ","か","さ","た","な","は","ま","や","ら","わ","が","ざ","だ","ば","ぱ"]
-    letters = ["∅","K","S","T","N","H","M","Y","R","W","G","Z","D","B","P"]
-    monographs = [ "あいうえお", "かきくけこ","さしすせそ",
-                                "たちつてと", "なにぬねの", "はひふへほ",                
-                                "まみむめも", "やゆよ", "らりるれろ",
-                                "わゐゑを",
-                                   #Diacritics
-                                "がぎぐげご","ざじずぜぞ","だぢづでど",
-                                "ばびぶべぼ","ぱぴぷぺぽ"                         ]
+    checkthese = ["あ","か","さ","た","な","は","ま","や","ら","わ","が","ざ","だ","ば","ぱ","きょ","しゃ","ちゃ","にゃ","ひゃ","みゃ","りゃ"]
+    letters = ["∅","K","S","T","N","H","M","Y","R","W","G","Z","D","B","P","K​","S​","C​","N​","H​","M​","R​"]
+    monographs = [ "あ,い,う,え,お", "か,き,く,け,こ","さ,し,す,せ,そ",
+                                "た,ち,つ,て,と", "な,に,ぬ,ね,の", "は,ひ,ふ,へ,ほ",                
+                                "ま,み,む,め,も", "や,ゆ,よ", "ら,り,る,れ,ろ",
+                                "わ,ゐ,ゑ,を",
+                                #Diacritics
+                                "が,ぎ,ぐ,げ,ご","ざ,じ,ず,ぜ,ぞ","だ,ぢ,づ,で,ど",
+                                "ば,び,ぶ,べ,ぼ","ぱ,ぴ,ぷ,ぺ,ぽ"
+                                #Diagraphs
+                                "きょ,きゅ,きょ","しゃ,しゅ,しょ","ちゃ,ちゅ,ちょ",
+                                "にゃ,にゅ,にょ","ひゃ,ひゅ,ひょ","みゃ,みゅ,みょ",
+                                "りゃ,りゅ,りょ"
 
-    for i in range(len(checkthese)):
+                   ]
+    for i in range(len(checkthese)-1):
         checkEnabled(letters[i],checkthese[i],monographs[i])
         if letters[i]=="W":
             print("\nDiacritics")
+        if letters[i] =="P":
+            print("\nDiagraphs")
     
 
