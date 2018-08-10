@@ -12,3 +12,12 @@
   
       + Show what is enabled / disabled. 
       >This is pretty primitive, if you want this to properly work make sure just to comment (#) on the start of the line when disabling          something.
+      
+      
+  - V4
+  
+      + Added Diagraphs. Enable/Disable the same way.
+      
+    - V4.1
+          
+      + Fixed a slight error
