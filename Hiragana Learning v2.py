@@ -1,8 +1,16 @@
 import random
 length = 5 #Change this for second 'program' length
-jap = [
-#Basic monographs
 
+def checkEnabled(check,find,mono):
+        x=0
+        if find in jap:x = 1
+        print(check+"["+mono+"]",end=" ")
+        print(("Enabled","Disabled")[x == 0])
+
+
+
+jap = [
+            #Monographs
             "あ","い","う","え","お",                #∅
             "か","き","く","け","こ",                #K
             "さ","し","す","せ","そ",                #S
@@ -13,13 +21,12 @@ jap = [
             "や","ゆ","よ",                                 #Y
             "ら","り","る","れ","ろ",                 #R
             "わ","ゐ","ゑ","を",                         #W
-
             #Diacritics (Dakuten)
-            "が","ぎ","ぐ","げ","ご",
-            "ざ","じ","ず","ぜ","ぞ",
-            "だ","ぢ","づ","で","ど",
-            "ば","び","ぶ","べ","ぼ",
-            "ぱ","ぴ","ぷ","ぺ","ぽ"
+            "が","ぎ","ぐ","げ","ご",                #G
+            "ざ","じ","ず","ぜ","ぞ",                #Z
+            "だ","ぢ","づ","で","ど",                #D
+            "ば","び","ぶ","べ","ぼ",                #B
+            "ぱ","ぴ","ぷ","ぺ","ぽ"                 #P
                                                        ]
 #When choosing what hiragana you want to use, just add a # to the beginning of each line you want to disable.
 #For example, to disable the M,Y and R Monographs, you would change the start of the lines to 
@@ -30,7 +37,7 @@ jap = [
 
 
 eng = [
-             #Basic Romanji
+             #Romanji
              "a","i","u","e","o",
              "ka","ki","ku","ke","ko",
              "sa","shi","su","se","so",
@@ -41,7 +48,6 @@ eng = [
              "ya","yu","yo",
              "ra","ri","ru","re","ro",
              "wa","wi","we","wo",
-
              #Diacritics
              "ga","gi","gu","ge","go",
              "za","ji","zu","ze","zo",
@@ -49,11 +55,10 @@ eng = [
              "ba","bi","bu","be","bo",
              "pa","pi","pu","pe","po"
                                                         ]
-
 program = input("""Choose Program\n\n
                             1. Write the Hiragana (Needs IME)\n
-                            2. Decipher the Monographs (Set length at start of file)\n> """)
-
+                            2. Decipher the Monographs (Set length at start of file)\n
+                            3. Check what sets are enabled\n> """)
 if program == "1":
     
     while True:
@@ -85,4 +90,21 @@ if program == "2":
             print("correct!")
         else:
             print(english)
+
+if program == "3":
+    checkthese = ["あ","か","さ","た","な","は","ま","や","ら","わ","が","ざ","だ","ば","ぱ"]
+    letters = ["∅","K","S","T","N","H","M","Y","R","W","G","Z","D","B","P"]
+    monographs = [ "あいうえお", "かきくけこ","さしすせそ",
+                                "たちつてと", "なにぬねの", "はひふへほ",                
+                                "まみむめも", "やゆよ", "らりるれろ",
+                                "わゐゑを",
+                                   #Diacritics
+                                "がぎぐげご","ざじずぜぞ","だぢづでど",
+                                "ばびぶべぼ","ぱぴぷぺぽ"                         ]
+
+    for i in range(len(checkthese)):
+        checkEnabled(letters[i],checkthese[i],monographs[i])
+        if letters[i]=="W":
+            print("\nDiacritics")
+    
 
