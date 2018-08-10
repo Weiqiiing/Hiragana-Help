@@ -16,7 +16,7 @@ def checkEnabled(check,find,mono):
 monograph = [
 ["あ","a"],["い","i"],["う","u"],["え","e"],["お","o"],                      #∅
 ["か","ka"],["き","ki"],["く","ku"],["け","ke"],["こ","ko"],  	    #K
-#["さ","sa"],["し","shi"],["す","su"],["せ","se"],["そ","so"], 	    #S
+["さ","sa"],["し","shi"],["す","su"],["せ","se"],["そ","so"], 	    #S
 ["た","ta"],["ち","chi"],["つ","tsu"],["て","te"],["と","to"],  	    #T
 ["な","na"],["に","ni"],["ぬ","nu"],["ね","ne"],["の","no"],  	    #N 
 ["は","ha"],["ひ","hi"],["ふ","fu"],["へ","he"],["ほ","ho"],   	    #H 
@@ -44,7 +44,7 @@ digraph = [
 ["りゃ","rya"],["りゅ","ryu"],["りょ","ryo"]            
 ]
 
-digrdiac = [ #Diagraphs & Diacritics
+digrdiac = [ #Digraphs & Diacritics
 ["ぎゃ","gya"],["ぎゅ","gyu"],["ぎょ","gyo"],
 ["じゃ","zya"],["じゅ","zyu"],["じょ","zyo"], #can be considered as ja, ju and jo
 ["ぢゃ","dya"],["ぢゅ","dyu"],["ぢょ","dyo"], #can also be considered as, ja, ju and jo
@@ -97,8 +97,8 @@ if program == "2":
         print("\n\n")
 
 if program == "3":
-    checkthese = ["あ","か","さ","た","な","は","ま","や","ら","わ","が","ざ","だ","ば","ぱ","きょ","しゃ","ちゃ","にゃ","ひゃ","みゃ","りゃ"]
-    letters = ["∅","K","S","T","N","H","M","Y","R","W","G","Z","D","B","P","K​","S​","C​","N​","H​","M​","R​"]
+    checkthese = ["あ","か","さ","た","な","は","ま","や","ら","わ","が","ざ","だ","ば","ぱ","きょ","しゃ","ちゃ","にゃ","ひゃ","みゃ","りゃ","ぎゃ","じゃ","ぢゃ","びゃ","ぴゃ"]
+    letters = ["∅","K","S","T","N","H","M","Y","R","W","G","Z","D","B","P","K​","S​","C​","N​","H​","M​","R​","G","Z","D","B","P​​"]
     monographs = [ "あ,い,う,え,お", "か,き,く,け,こ","さ,し,す,せ,そ",
                                 "た,ち,つ,て,と", "な,に,ぬ,ね,の", "は,ひ,ふ,へ,ほ",                
                                 "ま,み,む,め,も", "や,ゆ,よ", "ら,り,る,れ,ろ",
@@ -106,20 +106,22 @@ if program == "3":
                                 #Diacritics
                                 "が,ぎ,ぐ,げ,ご","ざ,じ,ず,ぜ,ぞ","だ,ぢ,づ,で,ど",
                                 "ば,び,ぶ,べ,ぼ","ぱ,ぴ,ぷ,ぺ,ぽ",
-                                #Diagraphs
+                                #Digraphs
                                 "きょ,きゅ,きょ","しゃ,しゅ,しょ","ちゃ,ちゅ,ちょ",
                                 "にゃ,にゅ,にょ","ひゃ,ひゅ,ひょ","みゃ,みゅ,みょ",
                                 "りゃ,りゅ,りょ",
-                                #Diagraphs and Diacritics
+                                #Digraphs and Diacritics
                                 "ぎゃ,ぎゅ,ぎょ","じゃ,じゅ,じょ","ぢゃ,ぢゅ,ぢょ",
                                 "びゃ,びゅ,びょ","ぴゃ,ぴゅ,ぴょ"
-                                                                                                                ]
+                                                                          ]
     for i in range(len(checkthese)):
         checkEnabled(letters[i],checkthese[i],monographs[i])
         if letters[i]=="W":
             print("\nDiacritics")
         if letters[i] =="P":
             print("\nDiagraphs")
+        if letters[i] =="R​":
+            print("\nDigraphs and Diacritics")
 
         
 #instructions
@@ -149,28 +151,4 @@ if program == "4":
             3. Dashes [chi-ha-su-yu-he]
 
             Restart the program and pick a game!""")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
