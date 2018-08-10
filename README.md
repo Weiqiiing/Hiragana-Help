@@ -21,3 +21,8 @@
     - V4.1
           
       + Fixed a slight error
+
+    
+  - V5
+  
+      + Rewrote a bunch of the code. Now easier to 'enable and disable' certain things
